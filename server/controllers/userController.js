@@ -37,6 +37,7 @@ const register = async (req,res,next) =>{
         name,
         email,
         password:hashedPassword,
+        blogs:[]
     
     })
     
@@ -45,6 +46,7 @@ const register = async (req,res,next) =>{
         _id : user.id,
         name :user.name,
         email : user.email,
+        blogs : user.blogs
         
      
        })}else{
