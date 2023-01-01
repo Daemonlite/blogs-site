@@ -11,6 +11,7 @@ const getUsers = async (req,res,next) => {
   if(!users){
     res.status(404).json({message:'no user found'})
   }
+  
   return res.status(200).json(users)
 }
 const register = async (req,res,next) =>{
@@ -50,8 +51,7 @@ const register = async (req,res,next) =>{
         
      
        })}else{
-          res.status(400)
-          throw new Error('invalid user credentials')
+          res.status(400).send('invalid user credentials')
        }
       
     
@@ -68,11 +68,10 @@ const register = async (req,res,next) =>{
            
         })
         }else{
-            res.status(400)
-            throw new Error('invalid user credentials')
+            res.status(400).send('invalid user credentials')
         }
     
-        res.json({message:"login user"})
+        res.send("login user")
        }
 
 module.exports ={
